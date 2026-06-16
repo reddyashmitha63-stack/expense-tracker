@@ -10,6 +10,14 @@ form.addEventListener("submit", function(event) {
 
     const expenseName = expenseNameInput.value;
     const expenseAmount = expenseAmountInput.value;
+    if (expenseName === "" || expenseAmount === "") {
+    alert("Please fill all fields");
+    return;
+}
+    if (expenseAmount <= 0) {
+    alert("Amount must be greater than 0");
+    return;
+}
 
     const expdiv = document.getElementById("expenses");
 
@@ -21,7 +29,15 @@ form.addEventListener("submit", function(event) {
     };
 
     expenses.push(expense);
+    let total=0;
+    for(let expense of expenses){
+        total+=expense.amount;
+    }
 
+    console.log(total);
+    const totalamount=document.getElementById("total");
+    totalamount.textContent=total;
+    
     console.log(expenses);
 
     expenseNameInput.value = "";
