@@ -21,8 +21,12 @@ form.addEventListener("submit", function(event) {
 
     const expdiv = document.getElementById("expenses");
 
-    expdiv.innerHTML += expenseName + " - Rs " + expenseAmount + "<br>";
-
+    expdiv.innerHTML += `
+    <div>
+        ${expenseName} - Rs ${expenseAmount}
+        <button onclick="this.parentElement.remove()">Delete</button>
+    </div>
+    `;
     const expense = {
         name: expenseName,
         amount: Number(expenseAmount)
