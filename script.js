@@ -131,13 +131,18 @@ function renderExpenses() {
     for (let expense of expenses) {
 
         expdiv.innerHTML += `
-        <div>
-            ${expense.name} - Rs ${expense.amount} (${expense.category})
-            <button onclick="deleteExpense(${expense.id})">
-                Delete
-            </button>
-        </div>
-        `;
+<div>
+    <span>
+        ${expense.name} - Rs ${expense.amount}
+<span class="category-badge">
+    ${expense.category}
+</span>
+    </span>
+    <button onclick="deleteExpense(${expense.id})">
+        Delete
+    </button>
+</div>
+`;
     }
 }
 

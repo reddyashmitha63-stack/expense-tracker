@@ -1,5 +1,10 @@
 <html>
+    <head>
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    </head>
     <body>
+        <div class="container">
         <h3>Set Monthly Budget</h3>
 
             <input type="number" id="budget" placeholder="Enter Monthly Budget">
@@ -7,7 +12,7 @@
 <button id="set-budget">Set Budget
 </button>
 
-<h3>Budget Status</h3>
+<h2>Budget Status</h2>
 
 <div id="budget-status"></div>
         <form id="expense">
@@ -25,11 +30,15 @@
             </select>
             <button type="submit">Add Expense</button>
         </form>
-        <h2>expense list</h2>
-        <div id="expenses"></div>
-        <h3>Total: <span id="total">0</span></h3>
-        <h3>Analytics</h3>
+        <h2>Expense List</h2>
+        <div id="expenses" class="expense-list"></div>
+        <div class="total-card">
+            <h3>Total Spending</h3>
+            <p>Rs <span id="total">0</span></p>
+        </div>
+        <h2>Analytics</h2>
         <div id="analytics"></div>
+        </div>
         <script src="script.js"></script>
     </body>
 </html>
